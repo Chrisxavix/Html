@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document</title> 
+    <link rel="stylesheet" href="diseño"> <!-- Archivo de diseño -->
 </head>
 <body>
-    <!-- a ver -->
     <!-- atributo checked para que se seleccione uno por defecto -->
     <div>
         <select name="Macotas" id="">
@@ -53,6 +53,82 @@
             <input type="checkbox" name="sexe">
         </label>
     </div>
+
+    <!-- Selección y opciones -->
+    <fieldset style="margin-top: 20px;">
+        <legend>Paises</legend>
+        <label>Seleccione el país
+        <select name="paises" id="paises">
+            <optgroup label="América">
+                <option value="pe">Perú</option>
+                <option value="ec">Ecuador</option>
+                <option value="col">Colombia</option>
+            </optgroup>
+
+            <optgroup label="Europa">
+                <option value="ep">España</option>
+                <option value="it">Italia</option>
+                <option value="fr">Francia</option>
+            </optgroup>
+        </label>
+        </select>
+    </fieldset>
     
+    <fieldset>
+        <legend>Texto de área</legend>
+        <textarea name="textare" id="" cols="30" rows="10" placeholder="Escriba un concepto"></textarea>
+    </fieldset>
+
+    <h3 style="margin-top: 40px;">
+        FORMULARIO
+    </h3>
+    <form> <!-- Comunicación con el backend -->
+        <!-- Primera forma de jugar con el label e input
+        <label for="nombre">Ingrese el nombre</label> // Da el título a un campo
+        <input type="text" id="nombre"> El id de nombre se conecta con el for del label
+        -->
+
+        <!-- El Fieldselt separa contenedores para mejorar la experiencia de usuario-->
+        <fieldset> 
+            <legend>Datos Personales</legend>
+            <div>
+                <!-- La forma adecuada -->
+                <!-- en name para enviar datos al servidor de BD-->
+                <label>
+                    Ingrese el nombre:
+                    <input name="username">
+                </label>
+                </div>
+                
+                <!-- El div para separar, como un contenedor -->
+                <!-- usar (br) es para salto de línea, se podría usar -->
+        
+                <!-- El placeHolder es l texto dentro de la caja, se borra mientras ingreseas carateres-->
+                <div>
+                    <input name="username" placeholder="Ingrese algo">
+                </div>
+
+        </fieldset>
+
+
+        
+        <fieldset>
+            <legend>X datos </legend>
+        <div>
+        <label>
+            Ingrese la contraseña:
+            <!-- El usar el "requiered" implica que no deja continuar si no se ingresa-->
+            <input type="password" name="password" required>
+           </label>
+        </div>
+        
+        <!-- 
+        button no es recomendable para el envío de datos, sino el input
+        <button>Enviar</button>
+        -->
+
+        <!-- el atributo value es el nombre que va a ir en el botón -->
+        <input type="submit" value="Enviar">
+    </fieldset>
 </body>
 </html>
